@@ -1,0 +1,330 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to right, rgba(111, 30, 240, 0.2), rgba(227, 41, 233, 0.2));
+
+}
+
+.container .guess-box {
+    height: 9rem;
+    width: 25rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .2s;
+    /* overflow-y: scroll; */
+    overflow: hidden;
+    position: relative;
+}
+
+.container .guess-box .fa-rotate-right {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    padding: .5rem;
+    background-color: rgb(83, 44, 190);
+    color: white;
+    cursor: pointer;
+    border-radius: 0 10px 0 10px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.container .guess-box.show-game-fild {
+    height: 28rem;
+}
+
+.container .guess-box .input-box {
+    margin-top: 1rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    z-index: 2;
+}
+
+.container .guess-box .input-box-2 {
+    margin-top: 1rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.container .guess-box .input-box h1 {
+    text-transform: capitalize;
+    color: rgb(14, 0, 54);
+    border-bottom: 2px solid rgb(14, 0, 54);
+    padding-bottom: .5rem;
+    padding: 0 1rem;
+}
+
+.container .guess-box :where(.input-box, .input-box-2, .input-box-mobile) input {
+    width: 100%;
+    height: 2.5rem;
+    outline: none;
+    padding-left: 1rem;
+    font-size: 17px;
+    border: none;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    background-color: rgb(243, 243, 243);
+    border-radius: 5px 0 0 5px;
+}
+
+
+.container .guess-box h2 {
+    color: rgb(14, 0, 54);
+}
+
+.container .guess-box :where(.input-box, .input-box-2, .input-box-mobile) button {
+    padding: 0 1rem;
+    height: 2.5rem;
+    outline: none;
+    padding-left: 1rem;
+    font-size: 17px;
+    border: none;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(65, 47, 116);
+    cursor: pointer;
+    color: white;
+    border-radius: 0 5px 5px 0;
+}
+
+
+.guessed-number {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.guessed-number h3 {
+    color: rgb(163, 163, 163);
+    font-size: 1.3rem;
+}
+
+.guessed-number i {
+    color: rgb(163, 163, 163);
+    /* font-size: 1.3rem; */
+}
+
+.guessed-number .numbers {
+    color: rgb(179, 179, 179);
+    font-size: 1.5rem;
+
+}
+
+.guess-box .your-life {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    color: rgb(14, 0, 54);
+}
+
+.guess-box .your-life {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    color: rgb(14, 0, 54);
+}
+
+.guess-box .your-life h3 {
+    font-size: 1.5rem;
+}
+
+.guess-box .your-life h3 span {
+    font-size: 1.8rem;
+}
+
+.guess-box .your-life .hind {
+    font-size: 1.1rem;
+    color: rgb(235, 64, 64);
+}
+
+.guess-box .error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(83, 44, 190);
+    height: 100%;
+}
+
+.guess-box .sucsses {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(14, 0, 54);
+    height: 100%;
+    font-size: 1.7rem;
+}
+
+.guess-box .sucsses i {
+    font-size: 4rem;
+    color: rgb(83, 44, 190);
+}
+
+.guess-box .fa-heart-crack {
+    font-size: 5rem;
+}
+
+
+.guess-box .deficuilty::after {
+    content: '';
+    animation: started 2s infinite;
+}
+
+@keyframes started {
+    0% {
+        content: "";
+    }
+
+    20% {
+        content: ".";
+    }
+
+    40% {
+        content: "..";
+    }
+
+    60% {
+        content: "...";
+    }
+
+    80% {
+        content: "....";
+    }
+
+    100% {
+        content: ".....";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:700px) {
+
+
+
+    .container .guess-box {
+        width: 100%;
+        border-radius: 0;
+        /* padding:rem; */
+        position: relative;
+    }
+
+    .container {
+        height: 100vh;
+    }
+
+    .container .guess-box.show-game-fild {
+        height: 100%;
+    }
+
+    .container .guess-box .input-box {
+        width: 100%;
+        position: relative;
+
+    }
+
+    .container .guess-box .input-box-2 {
+        width: 100%;
+        position: fixed;
+        bottom: 1rem;
+        /* background-color: red; */
+        padding: .5rem 1.5rem;
+        background-color: white;
+        justify-content: end;
+        display: none;
+    }
+
+    .container .guess-box .input-box-2 input {
+        width: 65%;
+
+    }
+
+    .container .guess-box .fa-rotate-right {
+        top: auto;
+        right: auto;
+        bottom: 1.5rem;
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 10px 10px 10px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: 1.5rem;
+
+    }
+
+    .container .guess-box .input-box {
+        margin-top: 1rem;
+        display: flex;
+        width: 100%;
+        align-items: start;
+        justify-content: start;
+        width: 100%;
+    }
+
+    .guess-box .your-life {
+        height: auto;
+        width: 65%;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+        color: rgb(14, 0, 54);
+        position: absolute;
+        right: 1.9rem;
+        z-index: 1;
+    }
+
+    .guess-box .your-life .hind {
+        margin-top: 10rem;
+        position: absolute;
+        left: 0;
+    }
+
+    .guessed-number {
+        margin-top: 7rem;
+
+    }
+
+
+
+
+
+
+}

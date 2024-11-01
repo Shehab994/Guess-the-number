@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="guess-box">
+
+            <h2 class="deficuilty">Choose a deficuilty</h2>
+            <div class="input-box">
+                <input type="text" placeholder="Easy / Medium / Hard">
+                <button onclick="startBtn()">Start</button>
+            </div>
+
+            <div class="input-box-2">
+                <input type="text" class="input-2" placeholder="">
+                <button onclick="checkNumber()">Check</button>
+            </div>
+
+
+
+
+            <div class="guessed-number">
+                <h3>Guessed Number</h3>
+                <i class="fa-solid fa-arrow-down"></i>
+                <div class="numbers">
+                    No Guesses !
+                </div>
+            </div>
+
+
+            <div class="your-life">
+                <h3 class="life"><i class="fa-solid fa-heart"></i> . <span class="attamp">2</span></h3>
+                <div class="hind"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
